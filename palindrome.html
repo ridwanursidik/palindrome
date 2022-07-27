@@ -1,0 +1,47 @@
+<html>
+<head>
+<script>
+function palindrome()
+{
+ var kalimat = document.getElementById("kata").value;
+ var palindrom = kalimat.split("").reverse().join("");
+ hitung = 0;
+ var sp = kalimat.split(" ");
+
+   if(kalimat == palindrom)
+   {
+	for (i=0; i<sp.length; i++)
+	{
+		hitung++; 
+		if(i==0)
+		{
+			document.getElementById("kk").innerText="Kata Palindrome ke-1 : "+sp[i];
+		}
+	 }
+	} 
+	else
+	{
+		document.getElementById("kk").innerText="Bukan Palindrome";
+	}
+	
+    document.getElementById("jumlah").innerHTML="Jumlah Kata Palindrome : "+hitung+" kata";
+ 
+}
+</script>
+<style>
+	input[type=text]{height:40px; width:300px; padding:5px;}
+	input[type=button]{height:40px; width:100px;padding:5px;background:#B8FCC7;}
+	input[type=button]:hover{background:#80F99B;}
+</style>
+</head>
+<body>
+<h2>Program Polindrome</h2>
+
+<input type=text placeholder="Masukkan Kata/Kalimat" id=kata>
+<input type=button onclick="palindrome();" value="Cek Kata">
+<br>
+
+<p id=kk></p>
+<p id=jumlah></p>
+</body>
+</html>
